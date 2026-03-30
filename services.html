@@ -22,18 +22,33 @@
 <div id="page-transition"></div>
 <div class="cursor-glow"></div>
 
+<!-- Social Top Bar -->
+<div id="social-topbar" style="background:#060A12;border-bottom:1px solid rgba(184,115,51,0.15);padding:0.5rem 0;position:fixed;top:0;left:0;right:0;z-index:1001;">
+  <div style="max-width:1220px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;">
+    <a href="https://www.instagram.com/s_and_a_performance" target="_blank" rel="noopener"
+       style="display:flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#8898B0;text-decoration:none;transition:color 0.3s;"
+       onmouseover="this.style.color='#B87333'" onmouseout="this.style.color='#8898B0'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @s_and_a_performance
+    </a>
+    <div style="width:1px;height:14px;background:rgba(184,115,51,0.2);"></div>
+    <a href="https://www.facebook.com/people/SAPerformance/61579738778115/" target="_blank" rel="noopener"
+       style="display:flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#8898B0;text-decoration:none;transition:color 0.3s;"
+       onmouseover="this.style.color='#B87333'" onmouseout="this.style.color='#8898B0'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      S&amp;A Performance
+    </a>
+  </div>
+</div>
+
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-badge">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair Logo"
-             style="width:100%;height:100%;object-fit:contain;border-radius:50%;"
-             onerror="this.style.display='none';this.parentNode.textContent='B'"/>
-      </div>
+      <div class="nav-logo-badge" style="font-style:normal;font-size:1rem;letter-spacing:1px;">S&amp;A</div>
       <div>
-        <div class="nav-logo-name">S&A Auto Repair</div>
-        <div class="nav-logo-sub">Hollywood, FL · Est. [YEAR — ASK CLIENT]</div>
+        <div class="nav-logo-name">S&amp;A <span>Auto Repair</span></div>
+        <div class="nav-logo-sub">Hollywood, FL &nbsp;·&nbsp; Any Car · Any Brand</div>
       </div>
     </a>
     <ul class="nav-links" id="navMenu">
@@ -55,27 +70,26 @@
       <span class="section-label">Our Services</span>
       <h1>Our <em class="text-gold">Service</em> Menu</h1>
       <div class="gold-line"></div>
-      <p>Every service performed to factory specification — or beyond. Explore our full range of repair and maintenance offerings below.</p>
+      <p>Any car, any brand, any motor. Explore our full range of services — all performed to factory specification or beyond.</p>
     </div>
   </div>
 </div>
 
-<!-- More Than a Repair Shop -->
 <div class="svc-section" style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-gold);">
   <div class="container">
     <div class="svc-layout">
       <div class="svc-img-wrap">
-        <img class="svc-img" src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="Luxury and exotic vehicle service" loading="lazy"/>
+        <img class="svc-img" src="assets/photo_1.png" alt="S&A Auto Repair shop" loading="lazy"/>
       </div>
       <div class="svc-content">
         <span class="section-label">Who We Serve</span>
-        <h2>More Than a <em class="text-gold">Repair Shop</em></h2>
+        <h2>Any Car. <em class="text-gold">Any Brand.</em></h2>
         <div class="gold-line"></div>
         <p>
-          At S&A Auto Repair, quality isn't limited to one brand. We service the full spectrum of makes and models — domestic, import, and European — with the same factory-level precision applied to every vehicle that rolls through our doors.
+          We don't specialize in one brand — we specialize in results. S&A Auto Repair services the full spectrum: American muscle, Japanese imports, European luxury, and everything in between.
         </p>
         <p>
-          From your daily commuter to your weekend performance build, we bring the same expert attention to every job. No shortcuts, no guesswork — just honest, skilled repair work.
+          Every vehicle gets the same factory-level precision, OEM-grade parts, and transparent service. No upselling, no shortcuts — just honest work done right.
         </p>
         <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
           <div>
@@ -98,69 +112,61 @@
   </div>
 </div>
 
-<!-- ====================================================
-     FACTORY MAINTENANCE
-     ==================================================== -->
-<div class="svc-section" id="factory">
+<!-- SCHEDULED MAINTENANCE -->
+<div class="svc-section" id="maintenance">
   <div class="container">
     <div class="svc-layout">
       <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle factory maintenance service"
-          loading="lazy"/>
+        <img class="svc-img" src="assets/sheduled_maintenence.png" alt="Vehicle scheduled maintenance service" loading="lazy"/>
       </div>
       <div class="svc-content">
-        <span class="section-label">01 — Scheduled Service</span>
-        <h2>Factory <em class="text-gold">Maintenance</em></h2>
+        <span class="section-label">01 — Keep It Running</span>
+        <h2>Scheduled <em class="text-gold">Maintenance</em></h2>
         <div class="gold-line"></div>
         <p>
-          Your vehicle was engineered to extraordinary standards — and maintaining those standards requires precision. Our expert technicians perform all scheduled maintenance tasks adhering strictly to manufacturer specifications, ensuring your warranty integrity and long-term performance are never compromised.
+          Regular maintenance is the foundation of a reliable vehicle. At S&A Auto Repair, we perform all scheduled maintenance tasks to manufacturer specifications for every make and model — domestic, import, or European.
         </p>
         <p>
-          We go beyond checking boxes. Every factory maintenance visit includes a full multi-point inspection of critical systems, giving you a complete picture of your vehicle's health.
+          Every maintenance visit includes a full multi-point inspection so you always know the complete health of your vehicle, not just what you came in for.
         </p>
         <ul class="svc-features">
-          <li>Engine oil and filter replacement with manufacturer-approved fluids</li>
-          <li>Brake fluid, coolant, power steering, and differential fluid checks</li>
-          <li>Tire rotation and pressure calibration to spec</li>
-          <li>Brake pad thickness and rotor surface inspection</li>
-          <li>Battery health test and charging system check</li>
-          <li>Service indicator reset and condition-based service update</li>
+          <li>Engine oil and filter replacement — all grades and specs</li>
+          <li>Transmission, power steering, and differential fluid service</li>
+          <li>Coolant flush and cooling system inspection</li>
+          <li>Air filter, cabin filter, and fuel filter replacement</li>
+          <li>Brake fluid flush and hydraulic system check</li>
+          <li>Multi-point vehicle inspection and service indicator reset</li>
         </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule Factory Service</a>
+        <a href="specialist.html" class="btn btn-gold">Schedule Maintenance</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- BRAKE SERVICES -->
+<!-- BRAKES & SUSPENSION -->
 <div class="svc-section" id="brakes">
   <div class="container">
     <div class="svc-layout reverse">
       <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle brake service and inspection"
-          loading="lazy"/>
+        <img class="svc-img" src="https://images.pexels.com/photos/244553/pexels-photo-244553.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brake and suspension service" loading="lazy"/>
       </div>
       <div class="svc-content">
-        <span class="section-label">02 — Safety Critical</span>
-        <h2>Brake <em class="text-gold">Services</em></h2>
+        <span class="section-label">02 — Safety First</span>
+        <h2>Brakes &amp; <em class="text-gold">Suspension</em></h2>
         <div class="gold-line"></div>
         <p>
-          Your braking system is the most critical safety component on your vehicle. We offer comprehensive brake inspections, repairs, and replacements using high-quality OEM-grade parts that meet or exceed factory specifications.
+          Your braking system and suspension are the most safety-critical components on your vehicle. We provide comprehensive brake and suspension service for all makes and models — from everyday sedans to performance builds.
         </p>
         <p>
-          Whether you're hearing brake squeal, feeling vibration through the pedal, or your vehicle's ABS is flagging a fault — our experienced technicians will diagnose and resolve it with precision, providing you peace of mind and optimal braking performance.
+          Whether you're hearing squealing, feeling vibration, or pulling to one side, our technicians will diagnose and resolve it with precision.
         </p>
         <ul class="svc-features">
-          <li>Full brake pad and rotor inspection and measurement</li>
-          <li>Brake caliper service, rebuild, or replacement</li>
-          <li>Brake fluid flush and ABS bleeding service</li>
-          <li>Performance and Sport brake upgrades available</li>
-          <li>Electronic parking brake programming and service</li>
-          <li>DSC / brake warning light diagnosis and reset</li>
+          <li>Full brake pad, rotor, and caliper inspection and replacement</li>
+          <li>Brake fluid flush and ABS system bleeding</li>
+          <li>Struts, shocks, and spring replacement</li>
+          <li>Control arms, bushings, and ball joint service</li>
+          <li>4-wheel laser alignment to factory specification</li>
+          <li>ABS and traction control fault diagnosis</li>
         </ul>
         <a href="specialist.html" class="btn btn-gold">Schedule Brake Service</a>
       </div>
@@ -168,33 +174,92 @@
   </div>
 </div>
 
-<!-- A/C SERVICES -->
+<!-- ENGINE REPAIRS -->
+<div class="svc-section" id="engine">
+  <div class="container">
+    <div class="svc-layout">
+      <div class="svc-img-wrap">
+        <img class="svc-img" src="assets/engine_repairs.png" alt="Engine repair service" loading="lazy"/>
+      </div>
+      <div class="svc-content">
+        <span class="section-label">03 — Power Restored</span>
+        <h2>Engine <em class="text-gold">Repairs</em></h2>
+        <div class="gold-line"></div>
+        <p>
+          From minor engine issues to major overhauls, S&A Auto Repair has the tools, training, and experience to handle it all. We work on every engine type — naturally aspirated, turbocharged, diesel, and hybrid.
+        </p>
+        <p>
+          No guessing, no unnecessary replacements. We diagnose the root cause first and fix exactly what needs fixing.
+        </p>
+        <ul class="svc-features">
+          <li>Timing belt and timing chain replacement</li>
+          <li>Head gasket and cylinder head service</li>
+          <li>Valve train, cam seal, and crank seal repairs</li>
+          <li>Engine mount replacement and vibration diagnosis</li>
+          <li>Overheating diagnosis and cooling system repair</li>
+          <li>Complete engine rebuilds and replacements</li>
+        </ul>
+        <a href="specialist.html" class="btn btn-gold">Discuss Engine Work</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FULL DIAGNOSTICS -->
+<div class="svc-section" id="diagnostics">
+  <div class="container">
+    <div class="svc-layout reverse">
+      <div class="svc-img-wrap">
+        <img class="svc-img" src="assets/system_diagnostics.png" alt="Full computer diagnostics service" loading="lazy"/>
+      </div>
+      <div class="svc-content">
+        <span class="section-label">04 — Read Everything</span>
+        <h2>Full System <em class="text-gold">Diagnostics</em></h2>
+        <div class="gold-line"></div>
+        <p>
+          Modern vehicles have dozens of electronic systems all communicating simultaneously. S&A Auto Repair uses factory-level OBD diagnostic tools to scan every module, read live data, and pinpoint faults with precision — on any make or model.
+        </p>
+        <p>
+          We don't just read codes. We interpret them, cross-reference with live data, and give you a clear picture of exactly what's happening with your vehicle.
+        </p>
+        <ul class="svc-features">
+          <li>Engine and transmission ECU full scan and live data</li>
+          <li>ABS, traction control, and stability system diagnosis</li>
+          <li>Airbag and SRS system fault reading and reset</li>
+          <li>TPMS sensor diagnosis, reset, and programming</li>
+          <li>Climate control and HVAC system fault scan</li>
+          <li>All warning lights — identified, explained, resolved</li>
+        </ul>
+        <a href="specialist.html" class="btn btn-gold">Book a Diagnostic</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A/C SERVICE -->
 <div class="svc-section" id="ac">
   <div class="container">
     <div class="svc-layout">
       <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle air conditioning service"
-          loading="lazy"/>
+        <img class="svc-img" src="assets/AC_service_repair.png" alt="A/C service and repair" loading="lazy"/>
       </div>
       <div class="svc-content">
-        <span class="section-label">03 — Climate Control</span>
-        <h2>A/C <em class="text-gold">Services</em></h2>
+        <span class="section-label">05 — Stay Cool</span>
+        <h2>A/C Service <em class="text-gold">&amp; Repair</em></h2>
         <div class="gold-line"></div>
         <p>
-          South Florida heat demands a perfectly functioning climate system. Stay cool and comfortable with our expert AC services. Our experienced technicians provide comprehensive AC maintenance, diagnostics, and repairs to ensure optimal performance year-round.
+          In South Florida's heat, a properly functioning A/C isn't a luxury — it's essential. Our technicians provide full A/C system service for all makes and models, from simple refrigerant refills to complete system rebuilds.
         </p>
         <p>
-          From simple refrigerant recharges to complete system rebuilds, we handle every component of your vehicle's climate control with the same meticulous precision we apply to every service.
+          We service both R-134a and R-1234yf systems, with precision leak detection and component-level diagnostics to ensure a lasting repair.
         </p>
         <ul class="svc-features">
-          <li>AC system pressure test and leak detection</li>
-          <li>Refrigerant evacuation, recharge, and R-1234yf service</li>
+          <li>Refrigerant recharge — R-134a and R-1234yf</li>
+          <li>Full A/C system pressure test and leak detection</li>
           <li>Compressor, condenser, and evaporator replacement</li>
-          <li>automatic climate control calibration</li>
+          <li>Expansion valve and accumulator/receiver-dryer service</li>
           <li>Cabin air filter and microfilter replacement</li>
-          <li>Blower motor and blend door actuator service</li>
+          <li>Blower motor and climate control system diagnosis</li>
         </ul>
         <a href="specialist.html" class="btn btn-gold">Schedule A/C Service</a>
       </div>
@@ -202,205 +267,93 @@
   </div>
 </div>
 
-<!-- TUNE-UP -->
-<div class="svc-section" id="tuneup">
+<!-- AUTO ELECTRICAL & CODING -->
+<div class="svc-section" id="electrical">
   <div class="container">
     <div class="svc-layout reverse">
       <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle engine tune-up service"
-          loading="lazy"/>
+        <img class="svc-img" src="assets/auto_electrical_coding.png" alt="Auto electrical and ECU coding service" loading="lazy"/>
       </div>
       <div class="svc-content">
-        <span class="section-label">04 — Performance Restored</span>
-        <h2>Vehicle <em class="text-gold">Tune-Up</em></h2>
+        <span class="section-label">06 — Smart Systems</span>
+        <h2>Auto Electrical <em class="text-gold">&amp; Coding</em></h2>
         <div class="gold-line"></div>
         <p>
-          Over time, even the finest engines lose their edge as components wear. Our comprehensive tune-up service restores your engine's performance, efficiency, and response to factory-like condition.
+          Today's vehicles are more computer than car. S&A Auto Repair handles the full spectrum of automotive electrical work — from faulty wiring to advanced ECU programming and module coding across all makes and models.
         </p>
         <p>
-          We inspect and replace key components including spark plugs, air filters, and fuel filters, ensuring optimal engine performance. Regular tune-ups improve fuel efficiency, extend engine life, and prevent unexpected breakdowns before they happen.
+          Our technicians use OEM-level software to program and code modules correctly, ensuring full system integration and no new fault codes.
         </p>
         <ul class="svc-features">
-          <li>OEM-specification spark plug inspection and replacement</li>
-          <li>Intake air filter and cabin filter replacement</li>
-          <li>Fuel filter and fuel injector service</li>
-          <li>Throttle body cleaning and idle calibration</li>
-          <li>Ignition coil inspection and fault code scan</li>
-          <li>Full engine health report with every tune-up</li>
+          <li>ECU repair, flashing, and programming</li>
+          <li>Module coding and adaptation (all makes)</li>
+          <li>Wiring harness diagnosis and repair</li>
+          <li>Battery, alternator, and charging system service</li>
+          <li>Fuse, relay, and junction box diagnosis</li>
+          <li>ADAS calibration and driver assist system reset</li>
         </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule a Tune-Up</a>
+        <a href="specialist.html" class="btn btn-gold">Discuss Electrical Work</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- TIRES & ALIGNMENTS -->
-<div class="svc-section" id="tires">
+<!-- RETROFITTING -->
+<div class="svc-section" id="retrofitting">
   <div class="container">
     <div class="svc-layout">
       <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle tire and wheel alignment service"
-          loading="lazy"/>
+        <img class="svc-img" src="assets/retrofitting.png" alt="Custom vehicle retrofitting" loading="lazy"/>
       </div>
       <div class="svc-content">
-        <span class="section-label">05 — Grip & Handling</span>
-        <h2>Tires &amp; <em class="text-gold">Alignments</em></h2>
+        <span class="section-label">07 — Your Vision</span>
+        <h2>Custom <em class="text-gold">Retrofitting</em></h2>
         <div class="gold-line"></div>
         <p>
-          Your vehicle's connection to the road starts with its tires and alignment. We offer tire inspections, rotations, balancing, and replacements to keep your vehicle running at its absolute best — with the premium tire brands your vehicle deserves.
+          Every retrofit project is unique. Whether you have something specific in mind or just know you want your vehicle upgraded, our specialists will walk you through the options and make it happen.
         </p>
         <p>
-          Our precise laser alignment services correct any misalignment issues caused by potholes, curb strikes, or normal wear — improving handling, fuel efficiency, and extending tire longevity significantly.
+          We handle retrofitting on all vehicle types and models. Get in touch and tell us about your project — no idea is too big or too specific.
         </p>
         <ul class="svc-features">
-          <li>Tire inspection, rotation, and pressure calibration</li>
-          <li>Computer-balanced wheel mounting service</li>
-          <li>4-wheel laser alignment to factory specification</li>
-          <li>Run-flat and performance tire installation</li>
-          <li>TPMS sensor service and relearn procedure</li>
-          <li>Suspension component pre-alignment inspection</li>
+          <li>All retrofit types and vehicle models welcome</li>
+          <li>Specialist consultation included — no charge to discuss</li>
+          <li>OEM and aftermarket solutions available</li>
+          <li>Full electrical integration and coding</li>
+          <li>Talk to a specialist about your specific project</li>
         </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule Tire Service</a>
+        <a href="specialist.html" class="btn btn-gold">Talk to a Specialist</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- TRANSMISSION -->
-<div class="svc-section" id="transmission">
+<!-- AUTO LOCKSMITH -->
+<div class="svc-section" id="locksmith">
   <div class="container">
     <div class="svc-layout reverse">
       <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle transmission service and repair"
-          loading="lazy"/>
+        <img class="svc-img" src="assets/Auto_locksmith.png" alt="Auto locksmith key cutting and programming" loading="lazy"/>
       </div>
       <div class="svc-content">
-        <span class="section-label">06 — Drivetrain Precision</span>
-        <h2>Transmission <em class="text-gold">Services</em></h2>
+        <span class="section-label">08 — Key Solutions</span>
+        <h2>Auto <em class="text-gold">Locksmith</em></h2>
         <div class="gold-line"></div>
         <p>
-          The transmission is the bridge between your engine and the road. Our expert technicians specialize in transmission repair, maintenance, and replacement — using advanced diagnostic tools to identify and resolve issues with precision.
+          Lost your keys? Need a spare? S&A Auto Repair provides complete automotive locksmith services for all makes and models — from basic key cutting to full smart key programming and remote fob replacement.
         </p>
         <p>
-          From fluid changes on ZF 8-speed automatics to complete Getrag manual rebuilds, we provide reliable, lasting solutions to keep your car's transmission operating flawlessly for years to come.
+          We program keys on-site with OEM-level equipment, ensuring your new key communicates correctly with every system in your vehicle.
         </p>
         <ul class="svc-features">
-          <li>Automatic and manual transmission fluid service</li>
-          <li>ZF 8-speed and 6-speed automatic rebuilds and repair</li>
-          <li>Getrag manual gearbox rebuild and synchro replacement</li>
-          <li>DSC / transmission fault code diagnosis</li>
-          <li>Transfer case and differential fluid service (xDrive)</li>
-          <li>Clutch replacement and flywheel resurfacing</li>
+          <li>New key cutting for all makes and models</li>
+          <li>Remote key fob programming and replacement</li>
+          <li>Transponder key cutting and chip programming</li>
+          <li>Smart key and proximity key programming</li>
+          <li>Key duplication and spare key services</li>
+          <li>Lockout assistance and emergency key services</li>
         </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule Transmission Service</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- OIL CHANGE -->
-<div class="svc-section" id="oil">
-  <div class="container">
-    <div class="svc-layout">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle premium oil change service"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">07 — Engine Protection</span>
-        <h2>Premium <em class="text-gold">Oil Change</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          Not all oil changes are equal — and your engine demands the highest standard. We use manufacturer-approved premium motor oils, paired with genuine OEM oil filters, to ensure optimal engine protection and longevity.
-        </p>
-        <p>
-          Our expert technicians perform a thorough 25-point inspection with every oil change, covering all essential fluids, filters, and visual checks — delivering complete peace of mind with every visit.
-        </p>
-        <ul class="svc-features">
-          <li>LL-approved full synthetic motor oils</li>
-          <li>Genuine OEM or Mann-Filter oil filter replacement</li>
-          <li>25-point full vehicle inspection included</li>
-          <li>Brake fluid, coolant, and power steering level check</li>
-          <li>Tire pressure set to factory specification</li>
-          <li>Oil service indicator reset and documentation</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Schedule an Oil Change</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ALL MAJOR REPAIRS -->
-<div class="svc-section" id="repairs">
-  <div class="container">
-    <div class="svc-layout reverse">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle major repair and diagnostics"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">08 — Full Repair Capability</span>
-        <h2>All Major <em class="text-gold">Repairs</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          When your vehicle needs serious attention, S&A Auto Repair has the expertise and tooling to handle it all. Our expert team handles everything from suspension rebuilds to complete electrical system diagnostics — ensuring your vehicle performs at its very best.
-        </p>
-        <p>
-          Using factory-level diagnostic software (ISTA) and professional workshop equipment, we approach every major repair with surgical precision. Drive with confidence knowing your car is in the most capable hands in South Florida.
-        </p>
-        <ul class="svc-features">
-          <li>Full suspension — control arms, bushings, shocks, struts</li>
-          <li>Electrical system diagnosis with OEM-level diagnostic software</li>
-          <li>Engine mounts, timing chain, and VANOS service</li>
-          <li>Cooling system — water pump, thermostat, radiator</li>
-          <li>Power steering rack and pump replacement</li>
-          <li>Heating, ventilation, and complex electrical repairs</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Describe Your Issue</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TUNING & PERFORMANCE -->
-<div class="svc-section" id="tuning">
-  <div class="container">
-    <div class="svc-layout">
-      <div class="svc-img-wrap">
-        <img class="svc-img"
-          src="assets/images/[REPLACE WITH YOUR IMAGE]"
-          alt="Vehicle performance tuning"
-          loading="lazy"/>
-      </div>
-      <div class="svc-content">
-        <span class="section-label">09 — The Signature Service</span>
-        <h2>Tuning &amp; <em class="text-gold">Performance</em></h2>
-        <div class="gold-line"></div>
-        <p>
-          Decades of mastery don't happen overnight. Since 2001, our in-house tuner has been perfecting engine calibration — bringing surgical precision to every build, from refined daily street cars to the most ambitious performance builds in the region.
-        </p>
-        <p>
-          Whether you want a subtle efficiency remap or a full-race calibration with supporting modifications, we build a solution tailored to your exact goals. Every tune is developed on our in-house dyno and road-validated before leaving the shop.
-        </p>
-        <ul class="svc-features">
-          <li>ECU stage 1, 2, and 3 remapping (Bootmod3, MHD, BM3)</li>
-          <li>Power and torque upgrades with full drivetrain safety</li>
-          <li>Turbo, intercooler, downpipe, and intake upgrades</li>
-          <li>Dyno tuning and power measurement</li>
-          <li>Suspension lowering springs, coilovers, and anti-roll bars</li>
-          <li>Competition and track prep packages available</li>
-        </ul>
-        <a href="specialist.html" class="btn btn-gold">Discuss Your Build</a>
+        <a href="specialist.html" class="btn btn-gold">Get a Key Made</a>
       </div>
     </div>
   </div>
@@ -418,6 +371,18 @@
     <a href="specialist.html" class="btn btn-gold">Contact Us Now</a>
   </div>
 </section>
+
+<!-- Extended Warranty Callout -->
+<div style="background:var(--bg-card);border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold);padding:4rem 0;">
+  <div class="container" style="text-align:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="margin:0 auto 1.5rem;display:block;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span class="section-label" style="display:block;margin-bottom:0.5rem;">Certified Coverage</span>
+    <h2 style="margin-bottom:1rem;">Extended Warranty <em class="text-gold">Mechanics Certified</em></h2>
+    <div class="gold-line center"></div>
+    <p style="max-width:560px;margin:0 auto 2rem;">S&A Auto Repair is certified to perform repairs under extended warranty coverage. Bring in your warranty documentation and we'll handle the rest — direct billing, proper documentation, and OEM-grade repairs that protect your coverage.</p>
+    <a href="specialist.html" class="btn btn-gold">Book a Warranty Repair</a>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer>

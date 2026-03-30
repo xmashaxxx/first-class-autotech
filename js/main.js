@@ -10,7 +10,7 @@
    the site is replaced with an expired notice.
    ─────────────────────────────────────────── */
 (function () {
-  const ALLOWED = ['xmashaxxx.github.io', 'localhost', '127.0.0.1'];
+  const ALLOWED = ['xmashaxxx.github.io', 'localhost', '127.0.0.1', ''];
   const host = window.location.hostname;
   if (!ALLOWED.includes(host)) {
     document.open();

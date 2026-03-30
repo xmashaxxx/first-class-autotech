@@ -14,57 +14,6 @@
   <script src="js/gallery.js" defer></script>
 
   <style>
-    /* Animated hero for media page */
-    .media-hero {
-      position: relative;
-      height: 68vh;
-      min-height: 420px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .media-hero-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform-origin: center center;
-      animation: kenBurns 14s ease-in-out infinite alternate;
-    }
-    @keyframes kenBurns {
-      0%   { transform: scale(1)    translate(0, 0); }
-      33%  { transform: scale(1.08) translate(-1.5%, 0.8%); }
-      66%  { transform: scale(1.05) translate(1.2%, -1%); }
-      100% { transform: scale(1.10) translate(-0.5%, 1.2%); }
-    }
-    .media-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(10,10,12,0.45) 0%, rgba(10,10,12,0.25) 50%, rgba(10,10,12,0.72) 100%);
-    }
-    /* Solid patch to cover watermark in top-left of hero image */
-    .media-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 80px;
-      height: 55px;
-      background: #0a0a0c;
-      z-index: 2;
-    }
-    .media-hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 0 1.5rem;
-    }
-    .media-hero-content h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1rem; }
-    .media-hero-content p  { max-width: 520px; margin: 0 auto; color: var(--text-secondary); font-size: 1rem; }
-
     /* Extra media page styles */
     .media-section { padding: 80px 0 120px; background: var(--bg-primary); }
     .media-header  { margin-bottom: 3rem; }
@@ -96,18 +45,33 @@
 <div id="page-transition"></div>
 <div class="cursor-glow"></div>
 
+<!-- Social Top Bar -->
+<div id="social-topbar" style="background:#060A12;border-bottom:1px solid rgba(184,115,51,0.15);padding:0.5rem 0;position:fixed;top:0;left:0;right:0;z-index:1001;">
+  <div style="max-width:1220px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;">
+    <a href="https://www.instagram.com/s_and_a_performance" target="_blank" rel="noopener"
+       style="display:flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#8898B0;text-decoration:none;transition:color 0.3s;"
+       onmouseover="this.style.color='#B87333'" onmouseout="this.style.color='#8898B0'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @s_and_a_performance
+    </a>
+    <div style="width:1px;height:14px;background:rgba(184,115,51,0.2);"></div>
+    <a href="https://www.facebook.com/people/SAPerformance/61579738778115/" target="_blank" rel="noopener"
+       style="display:flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#8898B0;text-decoration:none;transition:color 0.3s;"
+       onmouseover="this.style.color='#B87333'" onmouseout="this.style.color='#8898B0'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      S&amp;A Performance
+    </a>
+  </div>
+</div>
+
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-badge">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair Logo"
-             style="width:100%;height:100%;object-fit:contain;border-radius:50%;"
-             onerror="this.style.display='none';this.parentNode.textContent='B'"/>
-      </div>
+      <div class="nav-logo-badge" style="font-style:normal;font-size:1rem;letter-spacing:1px;">S&amp;A</div>
       <div>
-        <div class="nav-logo-name">S&A Auto Repair</div>
-        <div class="nav-logo-sub">Hollywood, FL · Est. [YEAR — ASK CLIENT]</div>
+        <div class="nav-logo-name">S&amp;A <span>Auto Repair</span></div>
+        <div class="nav-logo-sub">Hollywood, FL &nbsp;·&nbsp; Any Car · Any Brand</div>
       </div>
     </a>
     <ul class="nav-links" id="navMenu">
@@ -122,15 +86,15 @@
   </div>
 </nav>
 
-<!-- Page Hero — animated hero2 image -->
-<div class="media-hero">
-  <img class="media-hero-img" src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" />
-  <div class="media-hero-overlay"></div>
-  <div class="media-hero-content">
-    <span class="section-label">Media</span>
-    <h1>Our <em class="text-gold">Cars</em> &amp; Work</h1>
-    <div class="gold-line center"></div>
-    <p>A showcase of the vehicles that come through our shop — from daily drivers to performance builds. Click any image or video to expand.</p>
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="section-label">Our Work</span>
+      <h1>Media &amp; <em class="text-gold">Gallery</em></h1>
+      <div class="gold-line"></div>
+      <p>Photos and videos from our shop — the builds, repairs, and vehicles we work on every day.</p>
+    </div>
   </div>
 </div>
 
@@ -153,280 +117,105 @@
          and data-src="assets/videos/[REPLACE WITH YOUR VIDEO]"
     -->
     <div class="gallery-grid" id="gallery">
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3551.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3551.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3552.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3552.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3553.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3553.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
+      <div class="gallery-item video-item" data-type="video" data-src="assets/WhatsApp Video 2026-03-29 at 17.18.18.mp4" data-alt="S&A Auto Repair">
+        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/WhatsApp Video 2026-03-29 at 17.18.18.mp4" type="video/mp4"></video>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3554.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3554.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3555.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3555.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3556.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3556.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3557.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3557.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
+      <div class="gallery-item video-item" data-type="video" data-src="assets/WhatsApp Video 2026-03-29 at 17.18.18 (1).mp4" data-alt="S&A Auto Repair">
+        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/WhatsApp Video 2026-03-29 at 17.18.18 (1).mp4" type="video/mp4"></video>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3558.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3558.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3559.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3559.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3560.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3560.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3561.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3561.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
+      <div class="gallery-item video-item" data-type="video" data-src="assets/WhatsApp Video 2026-03-29 at 17.18.18 (2).mp4" data-alt="S&A Auto Repair">
+        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/WhatsApp Video 2026-03-29 at 17.18.18 (2).mp4" type="video/mp4"></video>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/IMG_3562.jpg" data-alt="S&A Auto Repair">
+        <img src="assets/IMG_3562.jpg" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164555.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164555.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164623.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164623.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164647.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164647.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
+      <div class="gallery-item video-item" data-type="video" data-src="assets/WhatsApp Video 2026-03-29 at 17.18.18 (3).mp4" data-alt="S&A Auto Repair">
+        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/WhatsApp Video 2026-03-29 at 17.18.18 (3).mp4" type="video/mp4"></video>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164706.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164706.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164719.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164719.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164736.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164736.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164759.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164759.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164820.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164820.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
+      <div class="gallery-item" data-type="photo" data-src="assets/Screenshot 2026-03-29 164848.png" data-alt="S&A Auto Repair">
+        <img src="assets/Screenshot 2026-03-29 164848.png" alt="S&A Auto Repair" loading="lazy"/>
         <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
-      </div>
-
-      <div class="gallery-item" data-type="photo" data-src="assets/images/[REPLACE WITH YOUR IMAGE]" data-alt="S&A Auto Repair">
-        <img src="assets/images/[REPLACE WITH YOUR IMAGE]" alt="S&A Auto Repair" loading="lazy"/>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/mp4"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
-      </div>
-
-      <div class="gallery-item video-item" data-type="video" data-src="assets/videos/[REPLACE WITH YOUR VIDEO]" data-alt="S&A Auto Repair">
-        <video muted preload="metadata" style="pointer-events:none;width:100%;height:auto;display:block;"><source src="assets/videos/[REPLACE WITH YOUR VIDEO]" type="video/quicktime"></video>
-        <div class="gallery-item-overlay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/><polygon points="10 8 16 12 10 16" fill="white"/></svg></div>
       </div>
 
     </div><!-- /#gallery -->

@@ -11,41 +11,41 @@
    ============================================ */
 
 /* ── FONTS — change both the @import and the variables below ── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Nunito:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* ── BACKGROUNDS ── */
-  --bg-primary:    #0D0D0D;
-  --bg-secondary:  #111111;
-  --bg-card:       #161616;
+  /* ── BACKGROUNDS — deep navy ── */
+  --bg-primary:    #080C14;
+  --bg-secondary:  #0B1220;
+  --bg-card:       #0F192B;
 
-  /* ── PRIMARY ACCENT — luxury gold (swap this for client's brand color) ── */
-  --gold:          #C9A84C;
-  --gold-light:    #E8C96A;
-  --gold-dark:     #A67C32;
-  --border-gold:   rgba(201,168,76,0.25);
-  --shadow-gold:   0 0 40px rgba(201,168,76,0.12);
+  /* ── PRIMARY ACCENT — burnished bronze ── */
+  --gold:          #B87333;
+  --gold-light:    #D4914A;
+  --gold-dark:     #8B5523;
+  --border-gold:   rgba(184,115,51,0.25);
+  --shadow-gold:   0 0 40px rgba(184,115,51,0.12);
 
-  /* ── SECONDARY ACCENT — depth / section highlights ── */
-  --accent-blue:      #1C69D4;
-  --accent-blue-dark: #1250A3;
-  --accent-blue-muted:rgba(28,105,212,0.12);
-  --border-blue:      rgba(28,105,212,0.3);
+  /* ── SECONDARY ACCENT — rich navy blue ── */
+  --accent-blue:      #1A4A8A;
+  --accent-blue-dark: #123570;
+  --accent-blue-muted:rgba(26,74,138,0.12);
+  --border-blue:      rgba(26,74,138,0.35);
 
-  /* ── ENERGY COLOR — performance / highlights ── */
-  --red:           #D42B2B;
-  --red-light:     #E84040;
-  --red-muted:     rgba(212,43,43,0.12);
-  --border-red:    rgba(212,43,43,0.3);
+  /* ── ENERGY COLOR — steel blue ── */
+  --red:           #2D6AA0;
+  --red-light:     #3A82C0;
+  --red-muted:     rgba(45,106,160,0.12);
+  --border-red:    rgba(45,106,160,0.3);
 
   /* ── TEXT ── */
-  --text-primary:  #F5F5F0;
-  --text-secondary:#A0A0A0;
-  --text-muted:    #555555;
+  --text-primary:  #EEE8E0;
+  --text-secondary:#8898B0;
+  --text-muted:    #3D5070;
 
-  /* ── FONTS — change these + the @import above ── */
-  --font-heading:  'Playfair Display', serif;
-  --font-body:     'Raleway', sans-serif;
+  /* ── FONTS ── */
+  --font-heading:  'Exo 2', sans-serif;
+  --font-body:     'Nunito', sans-serif;
 
   --ease:          cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition:    all 0.4s var(--ease);
@@ -198,6 +198,7 @@ ul { list-style: none; }
 .loader-brand {
   font-family: var(--font-heading);
   font-size: 1.6rem;
+  font-style: normal;
   color: var(--gold);
   letter-spacing: 3px;
   opacity: 0;
@@ -236,10 +237,35 @@ ul { list-style: none; }
 }
 
 /* ============================================
+   HERO PANEL — dark card overlay on video
+   ============================================ */
+.hero-panel {
+  position: absolute;
+  bottom: 0; right: 0;
+  z-index: 4;
+  width: min(700px, 62%);
+  background: rgba(6, 10, 18, 0.84);
+  border-top: 2px solid var(--border-gold);
+  border-left: 1px solid rgba(184,115,51,0.2);
+  padding: 1.75rem 2.5rem 1.75rem 3rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: panelIn 0.9s 1.2s var(--ease) forwards;
+}
+@keyframes panelIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+  .hero-panel { width: 100%; border-left: none; padding: 1.5rem; }
+}
+
+/* ============================================
    NAVIGATION
    ============================================ */
 nav {
-  position: fixed; top: 0; left: 0; right: 0;
+  position: fixed; top: 34px; left: 0; right: 0;
   z-index: 1000;
   padding: 1.75rem 0;
   transition: var(--transition);
@@ -272,7 +298,7 @@ nav.scrolled {
   border: 1.5px solid var(--gold);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-heading);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.2rem;
   color: var(--gold);
   flex-shrink: 0;
@@ -490,8 +516,8 @@ nav.scrolled {
 }
 .about-img {
   position: relative; z-index: 1;
-  width: 100%; height: 520px;
-  object-fit: cover;
+  width: 100%; height: auto;
+  display: block;
   filter: grayscale(15%) contrast(1.08);
 }
 
@@ -867,7 +893,7 @@ footer {
   .about-grid,
   .engine-inner,
   .location-inner { grid-template-columns: 1fr; gap: 3.5rem; }
-  .about-img  { height: 380px; }
+  .about-img  { height: auto; }
   .services-grid { grid-template-columns: repeat(2,1fr); }
 }
 
