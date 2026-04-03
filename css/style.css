@@ -241,15 +241,15 @@ ul { list-style: none; }
    ============================================ */
 .hero-panel {
   position: absolute;
-  bottom: 0; right: 0;
+  bottom: 0; left: 0; right: 0;
   z-index: 4;
-  width: min(700px, 62%);
+  width: 100%;
   background: rgba(6, 10, 18, 0.84);
   border-top: 2px solid var(--border-gold);
-  border-left: 1px solid rgba(184,115,51,0.2);
-  padding: 1.75rem 2.5rem 1.75rem 3rem;
+  padding: 1.75rem 2rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  text-align: center;
   opacity: 0;
   transform: translateY(20px);
   animation: panelIn 0.9s 1.2s var(--ease) forwards;
@@ -258,7 +258,7 @@ ul { list-style: none; }
   to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 768px) {
-  .hero-panel { width: 100%; border-left: none; padding: 1.5rem; }
+  .hero-panel { padding: 1.5rem 1rem; }
 }
 
 /* ============================================
